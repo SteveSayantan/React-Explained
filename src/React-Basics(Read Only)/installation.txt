@@ -1,0 +1,24 @@
+### Create React App ###
+Run --> 
+1. npx create-react-app <folder_name>
+2. cd <folder_name>
+3. npm install (For installing all the dependencies)
+4. npm start
+
+We have to connect all our code to index.js file for the react-app to work.
+
+### Vite ###
+
+Run -->
+1. npm create vite@latest <folder_name> -- --template react
+2. cd <folder_name>
+3. npm install (For installing all the dependencies)
+4. npm run dev
+
+Important: 
+-------------
+i. We need to use .jsx extension instead of .js
+ii. index.html is located in the root directory instead of public (as in create-react-app)
+iii. Here, all the code goes in main.jsx instead of index.js
+iv. For using variables from .env, we need to use => import.meta.env.VARIABLE_NAME
+
