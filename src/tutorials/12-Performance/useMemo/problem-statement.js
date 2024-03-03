@@ -23,9 +23,9 @@ const LowerState = () => {
 
     2. To stop this we use useMemo hook that allows us to memoize a value.
 
-    3. Only if one of its dependencies chages, that slowFunc will be executed.
+    3. Only if one of its dependencies changes, that slowFunc will be executed.
 
-    4. As a result, the persormance of our React app is improved.
+    4. As a result, the performance of our React app is improved.
 
  */
 

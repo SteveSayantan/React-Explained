@@ -12,14 +12,16 @@ const LowerState = () => {
   }
 /* 
   Problem Statement:
+  ------------------
 
   1. With this setup, we come across an issue that whenever the count value is increased, the list component also re-renders.  
 
   2. Though we have wrapped our List component with memo function, there's a gotcha.
 
-  3. When the count is changed, LowerState component re-renders and the removePerson function is made from scratch with each render.
+  3. When the count is changed, LowerState component re-renders and the removePerson function is made from scratch (and new reference is created) with each render .
 
-  4. As removePerson is given as a prop to the List component, this re-build is considered as a change in prop of the List component.
+  4. As removePerson is given as a prop to the List component, React.memo() finds a new reference while compairing the props.
+   Hence, the List component re-renders due to referential disintegrity.
 
   5. So, the List component also re-renders.
 
@@ -34,9 +36,11 @@ const LowerState = () => {
 
   2. It takes two arguments: the first is the function you want to memoize, and the second is an array of dependencies.
 
-  3. The hook will return a memoized version of the function that only changes if one of the values in the dependency array changes.
+  3. The hook will return a memoized version of the function (i.e. the same reference) that only changes if one of the values in the dependency array changes.
 
   4. If the dependency array is empty, it will only create the function the first time the component is mounted.
+
+  5. As a result, the unnecessary renders can be prevented.
 
   For further details checkout https://github.com/john-smilga/react-course-v3/blob/main/03-advanced-react/TUTORIAL.md#usecallback
 

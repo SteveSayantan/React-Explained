@@ -8,10 +8,10 @@ const LowerState = () => {
   const [people, setPeople] = useState(data);
   const [count, setCount] = useState(0);
 
-  const value=useMemo(slowFunc,[])                // The given function must return a value
-  // const value=useMemo(()=>slowFunc(),[])       // We can do like this also, but the return is must
+  const memoizedValue=useMemo(slowFunc,[])                // The given function must return a value which will be stored in "memoizedValue"
+  // const memoizedValue=useMemo(()=>slowFunc(),[])       // We can do like this also, but the return is must
 
-  console.log(value);
+  console.log(memoizedValue);
 
   const removePerson= useCallback(
     (id)=>{
@@ -20,14 +20,33 @@ const LowerState = () => {
 
   }, [people])
 
-/*      
-    1. The useMemo hook takes two arguments: first one is a function that ** returns ** a value we want to memoize and an array of dependencies.
+/*    
+    Ref: https://youtu.be/DEPwA3mv_R8?si=Fc_AJtDSjtVQ9hdt
+
+    1. The useMemo hook takes two arguments: a function that runs unnecessarily on each render and ** returns ** a value , an array of dependencies.
 
     2. If one of the values in the dependency array changes, the given function will be executed.
 
     3. For empty dependency array, the given function will run only on initial render.
 
-    4. As a result, the persormance of our React app is improved.
+    4. As a result, the performance of our React app is improved.
+
+    5. Since we need the return value of this expensive function, we can not use useEffect().
+
+
+  Important:
+  ----------
+  
+  Primarily, useMemo() is used to maintain the referential integrity for arrays and objects passed as a prop to another component. React.memo() fails to memoize the component
+    if any of its props is of reference type. 
+    
+    This happens because, with each render a new object is created and new reference is passed as a prop. Since, React.memo() performs a shallow comparison (checks if the previous reference is same as the current one; in case of arrays and objects)
+    of the props, it makes the component re-render, even if their content remains the same. 
+    
+    useMemo() ensures to return the same reference of the array or object passed as a prop, hence preventing unnecessary re-renders.
+  
+  For examples, check out useMemo-usecases.js
+
 
 */
 

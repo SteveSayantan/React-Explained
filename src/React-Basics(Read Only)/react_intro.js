@@ -60,4 +60,6 @@ root.render(<Greeting/>);//We must use the self-closing tag with component in Re
 
     State - Each component may have some private data, it is called the 'state' of the component.
 
+    Working of functional components in React: https://youtu.be/JxzzpDHYYXk?si=hIubvuebq0aC7GMx (Codedamn)
+
 */

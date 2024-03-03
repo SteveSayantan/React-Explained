@@ -1,8 +1,8 @@
 import {useState,useEffect} from "react";
 
-//useEffect allows to perform the side effects (any work outside the component) e.g. fetching data, setting up an eventlistener etc. A deep dive into useEffect https://youtu.be/dH6i3GurZW8
+//useEffect allows to perform the side effects (any work outside the expected output of the component) e.g. fetching data, setting up an eventlistener etc. A deep dive into useEffect https://youtu.be/dH6i3GurZW8
 
-//By default, it runs after every re-render.
+//By default, it runs after every re-render. After the entire component is built with updated values, only then useEffect runs. Take a look at this https://youtu.be/RAJD4KpX8LA?list=PLcwqWZLUOLRPsNyFMI9wJ3s8lmO0NRTiz&t=769 to understand the flow.
 
 const UseEffectBasics=()=>{
     
@@ -28,3 +28,16 @@ const UseEffectBasics=()=>{
     </>
 }
 export default UseEffectBasics;
+
+/* 
+    Some common side-effects are:
+
+    - DOM Manipulation
+    - Making Async API calls
+    - Writing to Storage
+    - IO Operations
+    - Subscription
+    - console.log()
+
+    A component's rendering logic and the side-effect logic should be separated (using useEffect() )
+*/

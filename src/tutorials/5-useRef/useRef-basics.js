@@ -16,7 +16,7 @@ const UseRefBasics=()=>{
     const divContainer= useRef(null);
 
     useEffect(()=>{     
-        console.log(refContainer.current); // This useEffect hook runs after the component is rendered. That's why it points to the input field.
+        console.log(refContainer.current); // This useEffect hook runs after the component is rendered. That's why it points to the input field. The value of current property remains unchanged inspite of re-renders.
         
         refContainer.current.focus(); // This is to focus the input field as soon as the page loads
     })

@@ -13,7 +13,7 @@ const useStateCounter=()=>{
    
     useEffect(()=>{         // During the first render, as the current property is false, it will not print anything. However, from the next re-render, it will start logging
         if(!isMounted.current){
-            isMounted.current=true;
+            isMounted.current=true;     // Though we are updating the value of current property, this will not re-render the component.
             return;
         }
         console.log('re-render'); // Due to React.StrictMode it may show unexpected behaviour.

@@ -15,13 +15,18 @@ const UseReducerBasics=()=>{
     /* 
         1. state is the state value similar to what we get from useState
 
-        2. dispatch method sends or dispatches information or action to the reducer function
+        2. dispatch method sends or dispatches information or action to the reducer function and triggers re-render.
 
-        3. reducer is the function which manages any change in the state value
+        3. reducer is the function which manages any change in the state value . 
 
-        4. defaultState is the initial state value provided to invoke useReducer 
+        4. defaultState is the initial state value provided to invoke useReducer
 
         5. If we use only useState, we can change the value of the state whenever and whereever we like, but with useReducer we can only do that through reducer function.
+
+        6. The re-render logic is the same as useState. Refer to the docs for more info.
+
+        7. Components with many state updates spread across many event handlers can get overwhelming. For these cases,
+         you can consolidate all the state update logic outside your component in a single function, called a reducer.
     
     */
    

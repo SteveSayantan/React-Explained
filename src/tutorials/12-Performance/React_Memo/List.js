@@ -1,6 +1,7 @@
 import Item from './Person';
 import React from 'react';
 // import { memo } from 'react';        // we can use this approach too
+
 const List = ({ people }) => {
   return (
     <div>
@@ -10,4 +11,4 @@ const List = ({ people }) => {
     </div>
   );
 };
-export default React.memo(List);        // We have to wrap the component like this while exporting
+export default React.memo(List);        // Passing the component as an arg to React.memo() returns a memoized component.

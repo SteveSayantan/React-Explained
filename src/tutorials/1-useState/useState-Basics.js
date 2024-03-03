@@ -19,11 +19,12 @@ import React,{useState} from "react"; // useState is a named import, so we must 
 const UseStateBasics=()=>{
     const[text,setText]=useState("Random Title"); //We need to provide a default value (any reference or primitive value) while calling useState. undefined is passed, if left empty.  
     
-    //text is the current state value  and SetText is the function returned by useState
+    //text is the current state value and SetText is the function returned by useState. The reference of setText function does not change with re-render.
 
     const handleClick=()=>{
-        // setText("Hello World"); 
-             //When we invoke this function, it will change the state value with the value provided while invoking useState.
+
+        // setText("Hello World");  //When we invoke this function, it will change the state value with the value provided while invoking useState.
+        
         if(text==="Random Title"){
             setText("Hello World")
         }

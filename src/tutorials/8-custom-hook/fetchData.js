@@ -13,9 +13,9 @@ export const useFetch=(url)=>{ // As this is a custom hook, its name must start 
         setLoading(false);
     }
 
-    useEffect(()=>{              // getProducts will only be triggered on initial render and when url is changed. It will not be executed even if its parent component re-renders.
+    useEffect(()=>{              // getProducts will only be triggered on initial render and when url is changed. It will not be executed even if its parent component re-renders, due to the dependency array.
         getProducts()
-    },[url])                    // As we are using 'url' as a parameter, we must include it in dependency array. If it were a global variable, in that case, no need to include 'url' in dependency array
+    },[url])                    // As we are using 'url' as a parameter, we must include it in dependency array. Had it been a global variable, in that case, no need to include 'url' in dependency array
 
 
     return {products,loading}   // Returning an object containing two state values
@@ -30,5 +30,7 @@ export const useFetch=(url)=>{ // As this is a custom hook, its name must start 
     3. When both the promises are resolved, setProducts and setLoading are executed and as a result re-render occurs.
 
     4. Therefore, fetched data and false is returned this time.
+
+    Note: Without the dependency array, this hook would re-render infinitely and make its parent do the same as well.
 
 */
