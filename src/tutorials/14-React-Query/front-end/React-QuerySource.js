@@ -1,7 +1,7 @@
 import MainComponent from "./main";
 import {QueryClient,QueryClientProvider} from '@tanstack/react-query'
 
-const queryClient= new QueryClient();      // We have to create a new instance of Queryclient outside any component 
+const queryClient= new QueryClient();      // We have to create a new instance of Queryclient outside any component. This basically works as a cache 
 
 const App= ()=>{
     // We have to wrap our main component with QueryClientProvider like this.

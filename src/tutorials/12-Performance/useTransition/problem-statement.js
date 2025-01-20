@@ -26,7 +26,7 @@ const LatestReact = () => {
 
     4. But we want a fast response in the input field, but the render of that bulky component can happen in background. For such cases, useTransition hook comes in handy.
 
-    5. Before rendering this component, we should turn on CPU throttling from performance insight in chrome devtools. Remember to restore it once our work is completed. 
+    5. Before rendering this component, we should turn on CPU throttling from `performance >> capture settings` in chrome devtools. Remember to restore it once our work is completed. 
 
 
 */

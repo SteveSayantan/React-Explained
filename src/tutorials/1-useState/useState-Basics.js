@@ -57,6 +57,16 @@ export default UseStateBasics;
      But without side-effects we can not build real-world apps. So, we delegate all the statefull logic to some other function that have some special capabilities (provided by
         React) to manage state and side-effects . These functions are called hooks and they are reusable.
 
+     React's in-built / native state management refers to hooks like useState, useEffect, useRef, useContext, useReducer, useCallback, useMemo. These are the foundation of all other state management models.
+
+     However, we have also thrid-party libraries that can manage state 
+     
+     - e.g. React Query, React Router, React Location  etc are indirect state managers as they are primarily designed for something else, not state management. 
+
+     - e.g. RTK, Zustand, Valtio are direct state managers built primarily for state management.
+     
+     In most of the cases, using native state managers with the indirect ones gets our job done.
+
     Component Lifecycle
     -------------------
      - When it mounts

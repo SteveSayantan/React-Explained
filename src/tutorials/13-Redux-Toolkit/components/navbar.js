@@ -7,7 +7,7 @@ const Navbar=()=>{
         return storeVal.cart        // The cart property basically holds the initial state passed in cartSlice. It is being stored in val.
         // We're looking for 'cart' property as in the store.js, we named the cart-reducer as 'cart'.
     });
-    // console.log(val) 
+    // console.log(val.amount) 
     return <nav>
         <div className="nav-center">
             <h3>redux toolkit</h3>

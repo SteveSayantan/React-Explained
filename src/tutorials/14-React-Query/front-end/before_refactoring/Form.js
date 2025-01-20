@@ -13,7 +13,7 @@ const Form = () => {
   const result= useMutation({ // We may skip adding a queryKey but we have to provide these properties with exact names.
     // mutationFn should be a function that either **returns a promise or throws an error.**
 
-    mutationFn: (taskTitle)=> customFetch.post('/',{title:taskTitle}),   // we could have set title as newItemName, but in that case, we won't be able to reuse this query in other components.
+    mutationFn: (taskTitle)=> customFetch.post('/',{title:taskTitle}),   // we could have hard-coded 'title' as newItemName, but in that case, we won't be able to reuse this query in other components.
 
     // useMutation has some helper methods as follows and their names should match exactly:
 

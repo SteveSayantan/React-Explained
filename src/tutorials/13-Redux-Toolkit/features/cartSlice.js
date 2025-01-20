@@ -8,11 +8,11 @@
 
 import {createAsyncThunk, createSlice} from '@reduxjs/toolkit'
 
-const url= 'https://course-api.com/react-useReducer-cart-project'
+const url= 'https://www.course-api.com/react-useReducer-cart-project'
 
 const initialState={
     cartItems:[],
-    amount:5,
+    amount:0,
     total:0,
     isLoading:true
 }
@@ -23,7 +23,7 @@ const initialState={
 */
 
 
-export const getCartItems= createAsyncThunk('cart/fetchData',(name,thunkAPI)=>{ // This cb must return a promise, we can use an async function too
+export const getCartItems= createAsyncThunk('cart/fetchData',(name,thunkAPI)=>{ // This cb must return a promise, we can use an async function as cb also.
 
     // console.log(name)   // This is actually the argument passed while calling getCartItems in CartContainer.js
 
@@ -31,13 +31,13 @@ export const getCartItems= createAsyncThunk('cart/fetchData',(name,thunkAPI)=>{ 
 
     // thunkAPI.getState()     // Returns the store object with all the state values in it
 
-    // thunkAPI.dispatch(openModal())     // Dispatches the given action, even if the action is not a part of this slice
+    // thunkAPI.dispatch(openModal())     // Dispatches the given action, even if the action is not a part of this slice ( openModal needs to be imported !!!!)
 
     return fetch(url).then((resp)=>{
         return resp.json();             // Both of these 'return' are inevitable , otherwise the promise returned by then block (that goes to getCartItems.fulfilled) can not be fulfilled     
     })
     .catch(err=>{
-        return thunkAPI.rejectWithValue('Something Went Wrong')     // This 'return' is a must, otherwise the promise returned by catch block (that goes to getItems.rejected) can not be fulfilled
+        return thunkAPI.rejectWithValue('Something Went Wrong')     // the 'return' keyword is a must, because this fulfilling value of the promise returned by catch block has to go to getItems.rejected
     })
 })
 
@@ -117,7 +117,7 @@ const cartSlice=createSlice({   //This function returns an object containing the
 
 })
 
-// console.log(cartSlice)
+console.log(cartSlice)
 
 export const{clearEntireCart,removeItem,increase,decrease,calculateTotals}=cartSlice.actions;     //In the cartSlice.actions, we get the functions set inside reducer. We're exporting those right away.
 

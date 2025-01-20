@@ -46,7 +46,7 @@ const CartContainer=()=>{
                 </h4>
             </div>
             <button className="btn clear-btn" onClick={()=>{
-                dispatch(openModal())         // We need to call clearEntireCart function wrapped in dispatch, like this
+                dispatch(openModal())         // We need to call openModal function wrapped in dispatch, like this
             }}>clear cart</button>         
         </footer>
     </section>

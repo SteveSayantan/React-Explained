@@ -45,7 +45,7 @@ const LowerState = () => {
     
     useMemo() ensures to return the same reference of the array or object passed as a prop, hence preventing unnecessary re-renders.
   
-  For examples, check out useMemo-usecases.js
+  For examples, check out useMemo-usecases.js, https://react.dev/reference/react/useMemo#usage
 
 
 */

@@ -7,7 +7,13 @@
 
      3. Here, only the code required for initial render of our app is loaded. The rest is loaded depending upon the user's interaction with app
 
-     4. To lazy load our app, we use Suspense API
+     4. To lazy load our app, we use lazy API.
+
+     5. Suspense component allows us display a fallback until the lazy loading is done.
+
+     Lazy API ref: https://react.dev/reference/react/lazy
+
+     Suspense Component ref: https://react.dev/reference/react/Suspense
 
 */
 

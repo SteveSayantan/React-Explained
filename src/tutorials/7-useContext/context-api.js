@@ -5,6 +5,9 @@ import {data} from '../../data'
 
 const personContext= React.createContext(); // This method returns two components --> Provider and Consumer . But only the first one is used nowadays. createContext is a API, not a hook, so it can be called outside a component.
 
+const SimpleComponent=()=>{
+    return <div style={{border:'2px solid black'}}>Hello I'm a simple div</div>
+}
 const ContextAPI= ()=>{
     const[people,setPeople]=useState(data);
 
@@ -18,6 +21,7 @@ const ContextAPI= ()=>{
     return <personContext.Provider value={{removePerson,people}} > {/* Passing the removePerson function and people statevalue to the 'value' prop, so that the child components can use it. The prop should be named as 'value' only */}
         <h3>Context API</h3>     
         <List/>
+        <SimpleComponent/>
     </personContext.Provider> // We can pass any datatype to 'value', passing as object (as shown) is not necessary. It is necessary for passing multiple values. If we pass a string or array as 'value' prop, we will get a string or array respectively.
 }
 
@@ -50,10 +54,17 @@ const SinglePerson=({id,name})=>{
 
     6. We can also use context for a small set of components instead of using it from a global perspective.
 
-    7. Whenever the context changes i.e. the Provider's value prop changes, all the components under the Provider will re-render.
+    7. Whenever the context changes i.e. the Provider's value prop changes, all the components *inside* the Provider will re-render,
+       even if it uses memo API to skip re-render.
 
 
-*/
+    Note: i. Whenever passing a function in 'value' prop, make sure to wrap the function with useCallback (if passing it as prop causes unnecessary re-renders).
+    
+        ii. If we calculate any value in the body of a component e.g. calculate the sum of an array, we should consider using useMemo to cache the value.
+
+    Checkout https://react.dev/reference/react/useContext#optimizing-re-renders-when-passing-objects-and-functions for details.
+
+    */
 
 const MultipleContextInstances=()=>{    // example of multiple instances of the existing Provider component.
     return <>

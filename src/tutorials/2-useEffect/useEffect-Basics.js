@@ -40,4 +40,8 @@ export default UseEffectBasics;
     - console.log()
 
     A component's rendering logic and the side-effect logic should be separated (using useEffect() )
+
+    Thoroughly go through the usage examples discussed here: https://react.dev/reference/react/useEffect#usage
+
+    Sometimes we don't need an effect, for details read this: https://react.dev/learn/you-might-not-need-an-effect
 */

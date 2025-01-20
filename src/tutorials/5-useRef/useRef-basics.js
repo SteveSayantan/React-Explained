@@ -3,11 +3,14 @@ import React,{useRef,useEffect} from "react";
 /* 
     1. useRef preserves values between renders
 
-    2. It DOES NOT trigger re-render
+    2. Changing it's value DOES NOT trigger re-render
 
     3. It is mainly used to target DOM elements
 
-    4. Watch the video for further queries.
+    4. Refer to the docs for further queries.
+
+    React only allows us change the DOM through state and props, not by direct access. 'ref' gives us a direct access to a DOM element.
+    Its use should be as less as possible, only for exceptional cases.
 
 */
 
@@ -32,7 +35,7 @@ const UseRefBasics=()=>{
 
     }
 
-    // console.log(refContainer,divContainer);  // Here, both will show null as the component is not rendered yet. But after render, they can be accessed via events as shown in the example above.
+    // console.log(refContainer,divContainer);  // Here, both will show the initial value 'null' as the assignment is not done yet. But after render, the newly assigned values can be accessed as shown in the example above.
     return <>
         <form action="" className="form" onSubmit={handleSubmit}>  
             <div>

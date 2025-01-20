@@ -9,7 +9,7 @@ const SingleProduct = () => {
 
   const [query,setQuery]=useSearchParams();     // it returns an array containing an URLSearchParam object and a function   
 
-  const queryObj= Object.fromEntries([...query])  // {featured:'true'}  for url: http://localhost:3000/products/recZk?featured=true (Gives empty object when no query is present)
+  const queryObj= Object.fromEntries(query)  // {featured:'true'}  for url: http://localhost:3000/products/recZk?featured=true (Gives empty object when no query is present)
   
 
   const product= products.find((product)=>product.id===productId)

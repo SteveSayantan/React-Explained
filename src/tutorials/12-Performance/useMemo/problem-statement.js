@@ -21,7 +21,7 @@ const LowerState = () => {
 /*      
     1. The issue with current setup is, whenever the count state value changes, the component re-renders and the slowFunction is executed unnecessarily every time. slowFunc is an expensive function that has a huge impact.
 
-    2. To stop this we use useMemo hook that allows us to memoize a value.
+    2. To stop this we use useMemo hook that allows us to memoize its returned value.
 
     3. Only if one of its dependencies changes, that slowFunc will be executed.
 

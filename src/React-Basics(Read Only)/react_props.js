@@ -18,11 +18,11 @@ const secondBook={
 }
 
 /* 
-  Components interact with each other using props. Using Props to make components more dynamic. 
+  Components interact with each other using props. Using Props to make components more dynamic. These are read-only properties. 
 
   We can directly pass string datatype as prop, but for other datatypes we need to use JS expression i.e. inside { }
 
-  State is private to a component, however props are passed as args to another component to exchange data
+  State is private to a component, however props are passed as args to child component to exchange data. Change in prop causes the child to re-render.
 
  */
 function BookList() {

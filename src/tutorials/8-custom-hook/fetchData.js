@@ -23,9 +23,9 @@ export const useFetch=(url)=>{ // As this is a custom hook, its name must start 
 
 /*  Working Principle in details:
 
-    1. Initially, when this hook is called, due to async, the fetch function is executed in the background.
+    1. Initially, when this hook is called, an empty array and true is returned.
 
-    2. At that instance, an empty array and true is returned.
+    2. Due to async, the fetch function is executed in the background.
 
     3. When both the promises are resolved, setProducts and setLoading are executed and as a result re-render occurs.
 

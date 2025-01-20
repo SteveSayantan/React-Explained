@@ -55,8 +55,10 @@ root.render(<Greeting/>);//We must use the self-closing tag with component in Re
 
     i.e. anything we want to do in a React-based application, we have to bring from outside as per our project need.
 
-    JSX - JSX is the combination of HTML and JS . It is defined by React and our browser does not understand JSX out of the box. We need to transpile (by Babel)
-      it into simple HTML and JS for our browser to understand.
+    JSX(JavaScript Syntax Extension) - JSX is the combination of HTML and JS. In other words, is a syntax extension for JavaScript that lets us write HTML-like markup inside a JavaScript file.
+    It is concise and readable in nature. However, our browser does not understand JSX out of the box. We need to transpile (by Babel)
+    it into simple HTML and JS for our browser to understand. React and JSX are often used together, but we can use them independently of each other as they are two separate things.
+    JSX is a syntax extension, while React is a JavaScript library.
 
     State - Each component may have some private data, it is called the 'state' of the component.
 

@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 import { useFetch } from "./fetchData";
 
 /* 
@@ -11,7 +10,10 @@ import { useFetch } from "./fetchData";
 const url= 'https://course-api.com/javascript-store-products'
 
 const Example=()=>{
-    const {loading,products}=useFetch(url)  // Using the custom hook to perform fetch. It would be called on each re-render but it would **only** fetch data on initial render of the component and if url is changed (due to the dependency array inside it) .
+    const {loading,products}=useFetch(url)  // Using the custom hook to perform fetch. 
+    //The custom hook would be called on each re-render but it would **only** fetch data on initial render of the component and if url is changed (due to the dependency array inside it) .
+    // checkout https://react.dev/learn/reusing-logic-with-custom-hooks#passing-reactive-values-between-hooks
+
 
     // console.log(loading,products);
 

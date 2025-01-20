@@ -1,6 +1,6 @@
 import Item from './Person';
 import React from 'react';
-// import { memo } from 'react';        // we can use this approach too
+// import { memo } from 'react';        // we can use this approach for importing too
 
 const List = ({ people }) => {
   return (
